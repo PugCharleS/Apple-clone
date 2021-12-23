@@ -1,0 +1,6 @@
+.greeting {
+  font-size: 60px;
+  margin: 20px;
+  -webkit-text-stroke: 2px #000;
+  color: #fff; 
+}
