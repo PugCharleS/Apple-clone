@@ -1,0 +1,33 @@
+.counter {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 47% 53% 37% 63% / 59% 36% 64% 41% ;
+  background: rgb(108, 81, 215);
+  background: linear-gradient(326deg, rgba(27,1,136,1) 0%, rgba(121,9,121,1) 100%);
+  width: 360px;
+  height: 360px;
+}
+
+.counter_text {
+  font-size: 50px;
+  color: #fff;
+}
+
+.counter_buttons > button {
+  margin: 6px;
+  padding: 10px;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  border: 0px;
+  font-size: 28px;
+  transition: 0.3s all ease;
+}
+
+.counter_buttons > button:hover {
+  transform: scale(1.2);
+}
+
