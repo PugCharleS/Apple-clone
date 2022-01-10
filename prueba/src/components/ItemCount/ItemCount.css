@@ -4,9 +4,13 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-radius: 47% 53% 37% 63% / 59% 36% 64% 41% ;
+  border-radius: 47% 53% 37% 63% / 59% 36% 64% 41%;
   background: rgb(108, 81, 215);
-  background: linear-gradient(326deg, rgba(27,1,136,1) 0%, rgba(121,9,121,1) 100%);
+  background: linear-gradient(
+    326deg,
+    rgba(27, 1, 136, 1) 0%,
+    rgba(121, 9, 121, 1) 100%
+  );
   width: 360px;
   height: 360px;
 }
@@ -30,4 +34,3 @@
 .counter_buttons > button:hover {
   transform: scale(1.2);
 }
-
