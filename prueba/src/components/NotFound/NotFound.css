@@ -1,0 +1,20 @@
+.error-container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.error-text > h1 {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.return-button {
+  margin: 30px 0 100px 0;
+  outline: none;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 24px;
+}

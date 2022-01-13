@@ -1,17 +1,19 @@
 import React from "react";
-import './NavBar.css';
+import { Link } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
+
+import './NavBar.css';
 
 function NavBar() {
   return (
     <nav>
       <div className="nav-wrapper" id="nav">
-        <a href="#" className="brand-logo">Andoramen</a>
+        <Link to={`/`} className="brand-logo">Andoramen</Link>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Reservations</a></li>
-          <li><a href="#">Menu</a></li>
-          <li><a className="cart-icon"><CartWidget/></a></li>
+          <li><Link to='/categoria/ramen'>Ramen</Link></li>
+          <li><Link to='/categoria/drink'>Drinks</Link></li>
+          <li><Link to='/categoria/dessert'>Desserts</Link></li>
+          <li><Link to={`/cart`}><CartWidget /></Link></li>
         </ul>
       </div>
     </nav>

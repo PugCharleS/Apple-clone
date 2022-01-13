@@ -1,17 +1,12 @@
 import React from 'react';
-import Item from '../Item/Item';
-import Loader from '../../Loader/Loader';
+import Item from '../Item/Item'
 
-const ItemList = ({products, loading}) => {
+const ItemList = ({products}) => {
   return(
     <div>
-      { 
-        loading ? <Loader /> 
-          : 
-        products.map( prod =>     
-          <Item prod={prod} />
-        )
-      }
+      <>
+        { products.map( prod => <Item key={prod.id} prod={prod} /> ) }
+      </>
     </div>
   );
 }
