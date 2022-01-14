@@ -34,3 +34,15 @@
 .counter_buttons > button:hover {
   transform: scale(1.2);
 }
+
+.addBtn {
+  padding: 10px 15px;
+  margin: 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(255, 0, 0, 0.5);
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}

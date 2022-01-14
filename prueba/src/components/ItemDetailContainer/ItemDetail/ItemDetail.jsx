@@ -1,14 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "../../ItemCount/ItemCount";
-import useCounter from "../../ItemCount/useCounter";
+import { useContext } from 'react'
+import { CartContext } from "../../../context/cartContext";
 
 const ItemDetail = ({ producto }) => {
 
-  const [show, setShow] = useState();
+  const { cartList, addItem } = useContext(CartContext);
+
+  const [show, setShow] = useState(true);
 
   const onAdd = (counter) => {
-    setShow(false);
+    setShow(false)
+    addItem({ ...producto, cantidad: counter });
+    console.log(cartList);
   }
 
   return (
@@ -21,9 +26,8 @@ const ItemDetail = ({ producto }) => {
         show ? <ItemCount onAdd={onAdd} /> 
           :
         <div>
-          <Link to={`/`}><button>Ver mas producto</button></Link>
-          <ItemCount />
-          <Link to={`/cart`} onClick={() => onAdd()}><button>Terminar la compra</button></Link>
+          <Link to={`/`}><button>Ver mas productos</button></Link>
+          <Link to={`/cart`}><button>Terminar Compra</button></Link>
         </div>
       }
 
