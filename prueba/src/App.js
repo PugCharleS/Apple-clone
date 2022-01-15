@@ -10,6 +10,7 @@ import "./App.css";
 
 function App() {
   const greeting = "Bienvenido a Andoramen!";
+  const textoCategoria = "Seleccione algun prodcuto";
 
   return (
     <CartContextProvider>
@@ -25,7 +26,7 @@ function App() {
             <Route
               exact
               path="/categoria/:idCategoria"
-              element={<ItemListContainer greeting={greeting} />}
+              element={<ItemListContainer greeting={textoCategoria} />}
             />
             <Route
               exact

@@ -30,15 +30,14 @@ const ItemListContainer = ({greeting}) => {
   // console.log(idCategoria);
 
   return(
-    <div>
-      <h2 className='greeting'>{greeting}</h2>
-      <div className='menu'>
+    <div className='container'>
+      {/* <h2 className="greeting">{ greeting }</h2> */}
+      <div className="css-3d-text">{ greeting }</div>
         {
           loading ? <Loader /> 
             : 
-          <ItemList products={products} />
+          <ItemList products={products}/>
         }
-      </div>
     </div>
   );
 }
