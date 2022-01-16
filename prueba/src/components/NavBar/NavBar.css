@@ -1,22 +1,35 @@
-.brand-logo {
-  margin-left: 30px;
-  font-size: 30px;
-  font-weight: 700;
+.nav {
+  height: 44px;
+  margin: 0 auto;
+  background-color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 22px;
+  font-family: "Open Sans", sans-serif;
 }
 
-.right {
-  margin-right: 20px;
+.nav-logo {
+  font-size: 20px;
+  color: #dddddd;
+  outline: none;
+  padding: 0 20px;
+  margin: -3px 0 0 0;
+  transition: all 0.3s ease;
 }
 
-.right > li > a {
-  font-size: 18px;
-  transition: 0.3s all ease;
+.nav-logo:hover {
+  color: #fff;
 }
 
-.right > li > a:hover {
-  background-color: rgba(255, 255, 255, 0.262);
+.nav-link {
+  color: #ddd;
+  font-size: 14px;
+  padding: 0 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-#nav {
-  background-color: black;
+.nav-link:hover {
+  color: #fff;
 }

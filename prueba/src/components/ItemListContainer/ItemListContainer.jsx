@@ -6,17 +6,17 @@ import { useParams } from 'react-router-dom';
 
 import './ItemListContainer.css'
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
 
   const [products, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const { idCategoria } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
-    if (idCategoria) {
+    if (id) {
       getFetch
-      .then(resp => setProductos(resp.filter(prod => prod.categoria === idCategoria)))
+      .then(resp => setProductos(resp.filter(prod => prod.category === id)))
       .catch(err => console.log(err))
       .finally(() => setLoading(false));
     } else {
@@ -25,18 +25,16 @@ const ItemListContainer = ({greeting}) => {
       .catch(err => console.log(err))
       .finally(() => setLoading(false));
     }
-  }, [idCategoria]);
-
-  // console.log(idCategoria);
+  }, [id]);
 
   return(
     <div className='container'>
-      {/* <h2 className="greeting">{ greeting }</h2> */}
-      <div className="css-3d-text">{ greeting }</div>
         {
           loading ? <Loader /> 
             : 
-          <ItemList products={products}/>
+          <>
+            <ItemList products={products}/>
+          </>
         }
     </div>
   );

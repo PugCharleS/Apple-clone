@@ -5,32 +5,40 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import Cart from "./components/Cart/Cart";
 import NotFound from "./components/NotFound/NotFound";
 import { CartContextProvider } from "./context/cartContext";
+import Home from "./components/Home/Home";
 
 import "./App.css";
+import { BuyBanner } from "./components/Banner/Banner";
 
 function App() {
-  const greeting = "Bienvenido a Andoramen!";
-  const textoCategoria = "Seleccione algun prodcuto";
-
   return (
     <CartContextProvider>
       <BrowserRouter>
         <div className="App">
           <NavBar />
           <Routes>
+            <Route exact path="/" element={<Home />} />
             <Route
               exact
-              path="/"
-              element={<ItemListContainer greeting={greeting} />}
+              path="/categoria/:id"
+              element={
+                <>
+                  <BuyBanner
+                    title={"Apple Products"}
+                    subtitle={"Chip M1"}
+                    img={
+                      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/imac-feature-m1-202104?wid=358&hei=352&fmt=png-alpha&.v=1617213643000"
+                    }
+                    price={"Consiguelo Desde $25,999 MXN."}
+                    phrase={"Potencia el poder."}
+                  />
+                  <ItemListContainer />
+                </>
+              }
             />
             <Route
               exact
-              path="/categoria/:idCategoria"
-              element={<ItemListContainer greeting={textoCategoria} />}
-            />
-            <Route
-              exact
-              path="/detalle/:idDetalle"
+              path="/detalle/:id"
               element={<ItemDetailContainer />}
             />
             <Route exact path="/cart" element={<Cart />} />

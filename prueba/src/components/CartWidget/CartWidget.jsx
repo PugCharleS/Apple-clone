@@ -1,9 +1,8 @@
 import React from "react";
-import './CartWidget.css';
 
 const CartWidget = () => {
   return (
-    <i className="fas fa-shopping-cart"></i>
+    <i className="fas fa-shopping-cart cart-widget"></i>
   );
 }
 

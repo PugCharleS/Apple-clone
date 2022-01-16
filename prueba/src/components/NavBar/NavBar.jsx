@@ -1,21 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
-
 import './NavBar.css';
 
 function NavBar() {
   return (
-    <nav>
-      <div className="nav-wrapper" id="nav">
-        <Link to={`/`} className="brand-logo">Andoramen</Link>
-        <ul id="nav-mobile" className="right hide-on-med-and-down">
-          <li><Link to='/categoria/ramen'>Ramen</Link></li>
-          <li><Link to='/categoria/drink'>Drinks</Link></li>
-          <li><Link to='/categoria/dessert'>Desserts</Link></li>
-          <li><Link to={`/cart`}><CartWidget /></Link></li>
-        </ul>
-      </div>
+    <nav className="nav">
+      <Link to={`/`} className="nav-logo"><i className="fab fa-apple"></i></Link>
+      <Link to='/categoria/Mac'  className="nav-link">Mac</Link>
+      <Link to='/categoria/iPad' className="nav-link">iPad</Link>
+      <Link to='/categoria/iPhone' className="nav-link">iPhone</Link>
+      <Link to='/categoria/Watch' className="nav-link">Watch</Link>
+      <Link to='/categoria/Airpods' className="nav-link">Airpods</Link>
+      <Link to='/categoria/' className="nav-link"><i className="fas fa-search"></i></Link>
+      <Link to={`/cart`} className="nav-link"><CartWidget /></Link>
     </nav>
   );
 }
