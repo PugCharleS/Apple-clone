@@ -1,0 +1,44 @@
+.bolsa {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.bolsa-info {
+  margin: 50px;
+  text-align: center;
+}
+
+.bolsa-info > h1 {
+  font-size: 50px;
+  margin-bottom: 1px;
+}
+
+.bolsa-info > p {
+  color: #555;
+  font-size: 17px;
+  margin-bottom: 40px;
+}
+
+.bolsa-info > button {
+  border: none;
+  outline: none;
+  padding: 8px 130px;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #0276cf;
+  font-size: 18px;
+  transition: all 0.2s ease;
+}
+
+.bolsa-info > button:hover {
+  background-color: #1683d6;
+}
+
+.bolsa > hr {
+  margin-top: 30px;
+  width: 100%;
+}
