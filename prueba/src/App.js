@@ -6,9 +6,9 @@ import Cart from "./components/Cart/Cart";
 import NotFound from "./components/NotFound/NotFound";
 import { CartContextProvider } from "./context/cartContext";
 import Home from "./components/Home/Home";
+import { BuyBanner } from "./components/Banner/Banner";
 
 import "./App.css";
-import { BuyBanner } from "./components/Banner/Banner";
 
 function App() {
   return (

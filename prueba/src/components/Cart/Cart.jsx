@@ -4,12 +4,13 @@ import CartItem from './CartItem/CartItem';
 import './Cart.css'
 
 function Cart() {
-
+  
+  const { cartList, emptyCart } = useContext(CartContext);
 
   return (
     <div>
         <Bolsa />
-        {/* <button onClick={emptyCart}>Vaciar Carrito</button> */}
+        <button onClick={emptyCart}>Vaciar Carrito</button>
     </div>
   )
 }
