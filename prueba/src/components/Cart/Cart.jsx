@@ -5,19 +5,20 @@ import './Cart.css'
 
 function Cart() {
   
-  const { cartList, emptyCart } = useContext(CartContext);
+  const { emptyCart } = useContext(CartContext);
 
   return (
-    <div>
-        <Bolsa />
-        <button onClick={emptyCart}>Vaciar Carrito</button>
+    <div className='contenedor-bolsa'>
+      <Bolsa />
+
+      <button id='empty' className='empty-cart' onClick={emptyCart}>Vaciar Carrito</button>
     </div>
   )
 }
 
 function Bolsa() {
 
-  const { cartList, emptyCart } = useContext(CartContext);
+  const { cartList } = useContext(CartContext);
 
   return (
     <div className="bolsa">

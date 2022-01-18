@@ -1,12 +1,16 @@
 import './CartItem.css';
 import { formatter } from '../../Formatter/Formatter';
+import { useContext } from "react";
+import { CartContext } from '../../../context/cartContext';
+
 
 
 const CartItem = ({prod}) => {
+  
   return (
     <>
       <div className='item-container'>
-        <ItemContainer prod={prod} />  
+        <ItemContainer key={prod.id} prod={prod} />  
       </div>
       <hr />
     </>
@@ -14,11 +18,18 @@ const CartItem = ({prod}) => {
 }
 
 export const ItemContainer = ({prod}) => {
+
+  const { deleteItem } = useContext(CartContext);
+
+  const onDelete = ({prod}) => {
+    deleteItem({prod});
+  }
+
   return (
     <>
       <ItemContainerImg prod={prod} />
       <div className="item-container-info">
-        <ItemContainerPrice prod={prod}/>
+        <ItemContainerPrice onDelete={onDelete} prod={prod} />
         <hr />
         <AppleCareItem prod={prod}/>
         <hr />
@@ -36,14 +47,15 @@ export const ItemContainerImg = ({prod}) => {
   );
 }
 
-export const ItemContainerPrice = ({prod}) => {
+export const ItemContainerPrice = ({onDelete, prod}) => {
+
   return (
     <div className="item-container-price">
       <h2>{`${prod.name} - ${prod.color} - ${prod.storage}`}</h2>
       <h2>{prod.quantity}</h2>
       <div className="item-container-price__pr">
         <h2>{formatter.format((prod.price*prod.quantity))}</h2>
-        <a href="#" className='item-container-price__delete'>Eliminar</a>
+        <button onClick={() => onDelete({prod})} href="#" className='item-container-price__delete'>Eliminar</button>
       </div>
     </div>
   );
@@ -55,10 +67,10 @@ export const AppleCareItem = ({prod}) => {
       <div className="apple-care-info">
         <h3>Agrega AppleCare<span>+</span> para {prod.name} por {formatter.format(prod.price*0.18)}</h3>
         <p>Obtén hasta tres años de soporte técnico y protección contra daños accidentales.</p>
-        <a href="#">M&aacute;s informaci&oacute;n {'>'}</a>
+        <a href="#info">M&aacute;s informaci&oacute;n {'>'}</a>
       </div>
       <div className="apple-care-add">
-        <a href="#">Agregar</a>
+        <a href="#Agregar">Agregar</a>
       </div>
     </div>
   );
@@ -67,7 +79,7 @@ export const AppleCareItem = ({prod}) => {
 export const EnvioInfoItem = () => {
   return (
     <div className="envio-info">
-      <h3>Descubre qué tan pronto puedes recibir este artículo. <a href='#'>Ingresa el código postal</a></h3>
+      <h3>Descubre qué tan pronto puedes recibir este artículo. <a href='#cp'>Ingresa el código postal</a></h3>
       <p>Envío 5-7 días hábiles.</p>
     </div>
   );

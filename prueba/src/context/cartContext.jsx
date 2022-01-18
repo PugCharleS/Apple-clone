@@ -14,12 +14,17 @@ export const CartContextProvider = ({ children }) => {
       for (const prod of cartList) {
         if (prod.id === item.id) {
           prod.quantity+=item.quantity;
-          setCartList([...cartList,]);
+          setCartList([...cartList]);
           return false;
         } 
       }
       setCartList([...cartList, item]);
     }
+  }
+
+  function deleteItem({prod}) {
+    cartList.splice(cartList.indexOf(prod), 1);
+    setCartList([...cartList]);
   }
 
   function emptyCart() {
@@ -30,7 +35,8 @@ export const CartContextProvider = ({ children }) => {
     <CartContext.Provider value={{
       cartList,
       addItem,
-      emptyCart
+      emptyCart,
+      deleteItem
     }}>
       { children }
     </CartContext.Provider>

@@ -35,6 +35,9 @@
   font-size: 14px;
   text-decoration: none;
   color: #5292d7;
+  border: none;
+  outline: none;
+  background-color: #fff;
 }
 
 .item-container-price__delete:hover {

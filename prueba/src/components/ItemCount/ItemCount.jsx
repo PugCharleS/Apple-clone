@@ -4,7 +4,7 @@ import { formatter } from '../Formatter/Formatter';
 
 const ItemCount = ({ onAdd, producto }) => {
   
-  const { counter, increment, decrement, reset } = useCounter(1);
+  const { counter, increment, decrement } = useCounter(1);
 
   return (
     <div className="counter-container">
@@ -13,7 +13,7 @@ const ItemCount = ({ onAdd, producto }) => {
           <h3>Se envia:</h3>
           <p>5-7 dias habiles</p>
           <p>Envio sin costo</p>
-          <a href="#">Ver fechas de entrega</a>
+          <a href="#fechas">Ver fechas de entrega</a>
         </div>
         <div className="counter-precio">
           <h2>{formatter.format((producto.price*counter))}</h2>
