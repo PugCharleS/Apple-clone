@@ -15,7 +15,11 @@ export const useCounter = (initialState) => {
   }
 
   const decrement = () => {
-    setCounter(prev => prev - 1);
+    if (counter <= 1) {
+      setCounter(1);
+    } else {
+      setCounter(prev => prev - 1);
+    }
   }
 
   return {

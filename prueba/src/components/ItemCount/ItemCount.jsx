@@ -22,8 +22,12 @@ const ItemCount = ({ onAdd, producto }) => {
               :
               <h2>{formatter.format((producto.price*counter))}</h2>
           }
-          
-          <button id="minus" className="counter-precio__button-num" onClick={decrement}>-</button>
+          {
+            counter > 1 ? 
+              <button id="minus" className="counter-precio__button-num " onClick={decrement}>-</button>
+                :
+              <button id="minus" disabled className="counter-precio__button-num counter-precio__button-num-disabled" onClick={decrement}>-</button>
+          }
           <button className="counter-precio__button" onClick={() => onAdd(counter)}>Agregar a la bolsa</button>
           <button className="counter-precio__button-num" onClick={increment}>+</button>
         </div>

@@ -77,3 +77,7 @@
 .counter-precio__button-num:hover {
   background-color: #49a3e9;
 }
+
+.counter-precio__button-num-disabled {
+  background-color: #49a3e9;
+}
