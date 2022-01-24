@@ -1,12 +1,10 @@
-import './CartItem.css';
 import { formatter } from '../../Formatter/Formatter';
 import { useContext } from "react";
 import { CartContext } from '../../../context/cartContext';
 
+import './CartItem.css';
 
-
-const CartItem = ({prod}) => {
-  
+const CartItem = ({prod}) => { 
   return (
     <>
       <div className='item-container'>
@@ -17,14 +15,12 @@ const CartItem = ({prod}) => {
   )
 }
 
+
 export const ItemContainer = ({prod}) => {
-
   const { deleteItem } = useContext(CartContext);
-
   const onDelete = ({prod}) => {
     deleteItem({prod});
   }
-
   return (
     <>
       <ItemContainerImg prod={prod} />
@@ -39,16 +35,17 @@ export const ItemContainer = ({prod}) => {
   );
 }
 
+
 export const ItemContainerImg = ({prod}) => {
   return (
     <div className="item-container__img">
-      <img src={prod.img} alt={prod.name} />
+      <img src={prod.imageUrl} alt={prod.name} />
     </div>
   );
 }
 
-export const ItemContainerPrice = ({onDelete, prod}) => {
 
+export const ItemContainerPrice = ({onDelete, prod}) => {
   return (
     <div className="item-container-price">
       <h2>{`${prod.name} - ${prod.color} - ${prod.storage}`}</h2>
@@ -60,6 +57,7 @@ export const ItemContainerPrice = ({onDelete, prod}) => {
     </div>
   );
 }
+
 
 export const AppleCareItem = ({prod}) => {
   return (
@@ -76,6 +74,7 @@ export const AppleCareItem = ({prod}) => {
   );
 }
 
+
 export const EnvioInfoItem = () => {
   return (
     <div className="envio-info">
@@ -84,5 +83,6 @@ export const EnvioInfoItem = () => {
     </div>
   );
 }
+
 
 export default CartItem;

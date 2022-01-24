@@ -1,17 +1,23 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { CartContext } from '../../context/cartContext';
 import CartItem from './CartItem/CartItem';
-import './Cart.css'
+import { formatter } from '../Formatter/Formatter'; 
+import './Cart.css';
+import { Link } from 'react-router-dom';
 
 function Cart() {
   
-  const { emptyCart } = useContext(CartContext);
+  const { emptyCart, cartList } = useContext(CartContext);
 
   return (
     <div className='contenedor-bolsa'>
       <Bolsa />
-
-      <button id='empty' className='empty-cart' onClick={emptyCart}>Vaciar Carrito</button>
+      {
+        (cartList.length >= 1 ) ?
+          <button id='empty' className='empty-cart' onClick={emptyCart}>Vaciar Carrito</button>
+            :
+          <Link to={'/'}><button className='empty-cart'>Ir al Home</button></Link>
+      }
     </div>
   )
 }
@@ -19,19 +25,37 @@ function Cart() {
 function Bolsa() {
 
   const { cartList } = useContext(CartContext);
+  
+  let total = 0;
+
+  cartList.map(( prod ) => {
+    total += prod.price*prod.quantity;
+    return total;
+  });
 
   return (
-    <div className="bolsa">
-      <div className="bolsa-info">
-        <h1>Tu bolsa contiene lo siguiente.</h1>
-        <p>Obtén envío y devoluciones gratuitos en todos los pedidos.</p>
-        <button>Pagar</button>
+    
+    (cartList.length >= 1) ?
+      <div className="bolsa">
+        <div className="bolsa-info" id='bolsa'>
+          <h1>Tu bolsa contiene lo siguiente {
+            formatter.format(total)
+            }</h1>
+          <p>Obtén envío y devoluciones gratuitos en todos los pedidos.</p>
+          <button>Pagar</button>
+        </div>
+        <hr />
+        <div className="bolsa-products">
+          { cartList.map(prod => <CartItem key={prod.id} prod={prod}/>) }
+        </div>
       </div>
-      <hr />
-      <div className="bolsa-products">
-        { cartList.map(prod => <CartItem key={prod.id} prod={prod}/>) }
+        :
+      <div className="bolsa">
+        <div className="bolsa-info">
+          <h1>Tu bolsa est&aacute; vac&iacute;a</h1>
+        </div>
       </div>
-    </div>
+
   );
 }
 

@@ -71,7 +71,7 @@ export const DetalleGeneral = ({producto}) => {
 
   return (
     <div className="general">
-      <img className="general__img" src={obj.img} alt={name} />
+      <img className="general__img" src={obj.imageUrl} alt={name} />
       <a className="general__link" href="#Galeria">Ver la galeria</a>
       <div className="general-envio">
         <p>Envío sin costo en todos los pedidos</p>

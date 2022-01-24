@@ -1,5 +1,6 @@
 import './Banner.css'
 
+
 export const Banner = ({title, subtitle, img}) => {
   return (
     <>
@@ -12,6 +13,7 @@ export const Banner = ({title, subtitle, img}) => {
   );
 }
 
+
 export const NewBanner = ({title, subtitle, model,img}) => {
   return (
     <div className="new-banner">
@@ -23,6 +25,7 @@ export const NewBanner = ({title, subtitle, model,img}) => {
     </div>
   );
 }
+
 
 export const BuyBanner = ({title, subtitle, price, img, phrase}) => {
   return (

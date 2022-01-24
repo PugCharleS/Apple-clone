@@ -4,12 +4,12 @@ import './Item.css';
 
 const Item = ({prod}) => {
 
-  const {id, name, price, procesador, storage, img, ram, size, color, battery} = prod;
+  const {id, name, price, processor, storage, imageUrl, ram, size, color, battery} = prod;
 
   return (
     <div key={prod.id} className="wrapper">
       <div className="general-info">
-        <img src={img} alt="" />
+        <img src={imageUrl} alt="" />
         <h2>{name}</h2>
         <p>Desde ${price}</p>
         <Link to={`/detalle/${id}`}><button className="general-info_button">Ver Detalle</button></Link>
@@ -18,7 +18,7 @@ const Item = ({prod}) => {
       
       <div className="info">
         <p>{size}</p>
-        <p>{procesador}</p>
+        <p>{processor}</p>
         <p>{storage}</p>
         <p>{ram}</p>
         <p>{color}</p>
