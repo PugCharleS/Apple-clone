@@ -34,7 +34,7 @@ const ItemDetail = ({ producto }) => {
   )
 }
 
-export const NavDetalle = ({producto}) => {
+const NavDetalle = ({producto}) => {
 
   const {id, name, ...obj} = producto;
 
@@ -55,7 +55,7 @@ export const NavDetalle = ({producto}) => {
   );
 }
 
-export const Detalle = ({producto}) => {
+const Detalle = ({producto}) => {
   return (
     <div className="detalle">
       <DetalleGeneral producto={producto} />
@@ -64,7 +64,7 @@ export const Detalle = ({producto}) => {
   );
 }
 
-export const DetalleGeneral = ({producto}) => {
+const DetalleGeneral = ({producto}) => {
 
   const {id, name, ...obj} = producto;
 
@@ -84,7 +84,7 @@ export const DetalleGeneral = ({producto}) => {
   );
 }
 
-export const DetalleInfo = ({producto}) => {
+const DetalleInfo = ({producto}) => {
 
   return (
     <div className="detalle-info">
