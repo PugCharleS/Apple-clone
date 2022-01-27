@@ -20,7 +20,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route
               exact
-              path="/categoria/:id"
+              path="/category/:id"
               element={
                 <>
                   <BuyBanner

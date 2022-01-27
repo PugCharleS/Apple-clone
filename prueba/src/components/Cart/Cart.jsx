@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { CartContext } from '../../context/cartContext';
 import CartItem from './CartItem/CartItem';
 import { formatter } from '../Formatter/Formatter'; 
@@ -24,22 +24,14 @@ function Cart() {
 
 function Bolsa() {
 
-  const { cartList } = useContext(CartContext);
-  
-  let total = 0;
-
-  cartList.map(( prod ) => {
-    total += prod.price*prod.quantity;
-    return total;
-  });
-
+  const { cartList, total } = useContext(CartContext);
+ 
   return (
-    
     (cartList.length >= 1) ?
       <div className="bolsa">
         <div className="bolsa-info" id='bolsa'>
           <h1>Tu bolsa contiene lo siguiente {
-            formatter.format(total)
+            formatter.format(total())
             }</h1>
           <p>Obtén envío y devoluciones gratuitos en todos los pedidos.</p>
           <button>Pagar</button>
@@ -55,7 +47,6 @@ function Bolsa() {
           <h1>Tu bolsa est&aacute; vac&iacute;a</h1>
         </div>
       </div>
-
   );
 }
 

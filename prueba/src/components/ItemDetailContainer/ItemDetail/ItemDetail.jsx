@@ -15,7 +15,6 @@ const ItemDetail = ({ producto }) => {
     addItem({ ...producto, quantity: counter });
   }
 
-
   return (
     <div>
       <NavDetalle producto={producto}/>

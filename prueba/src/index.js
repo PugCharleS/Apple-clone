@@ -7,4 +7,9 @@ import "./index.css";
 
 getFirestoreApp();
 
-ReactDOM.render(<App className="container" />, document.getElementById("root"));
+ReactDOM.render(
+  <React.StrictMode>
+    <App className="container" />,
+  </React.StrictMode>,
+  document.getElementById("root")
+);
