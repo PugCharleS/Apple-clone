@@ -1,6 +1,6 @@
 import useCounter from "./useCounter";
-import './ItemCount.css';
 import { formatter } from '../Formatter/Formatter';
+import './ItemCount.css';
 
 const ItemCount = ({ onAdd, producto }) => {
   

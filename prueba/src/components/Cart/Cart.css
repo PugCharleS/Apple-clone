@@ -27,7 +27,11 @@
   margin-bottom: 40px;
 }
 
-.bolsa-info > button {
+.bolsa-info-form {
+  /* padding: 10px; */
+}
+
+.bolsa-info-button {
   border: none;
   outline: none;
   padding: 8px 130px;
@@ -38,7 +42,7 @@
   transition: all 0.2s ease;
 }
 
-.bolsa-info > button:hover {
+.bolsa-info-button:hover {
   background-color: #1683d6;
 }
 

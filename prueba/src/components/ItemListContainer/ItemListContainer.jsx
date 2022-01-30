@@ -44,15 +44,3 @@ const ItemListContainer = () => {
 }
 
 export default ItemListContainer;
-
-  // if (id) {
-  //   getFetch
-  //   .then(resp => setProductos(resp.filter(prod => prod.category === id)))
-  //   .catch(err => console.log(err))
-  //   .finally(() => setLoading(false));
-  // } else {
-  //   getFetch
-  //   .then(resp => setProductos(resp))
-  //   .catch(err => console.log(err))
-  //   .finally(() => setLoading(false));
-  // }

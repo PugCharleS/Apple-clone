@@ -1,6 +1,6 @@
 import { Banner, NewBanner } from '../Banner/Banner';
 
-function Home() {
+export const Home = () => {
   return (
     <>
       <Banner title="iPhone 13 Pro" subtitle="Muy muy Pro." img="https://www.prensalibre.com/wp-content/uploads/2021/09/iphone-13-1.jpg?quality=52"/>
@@ -9,5 +9,3 @@ function Home() {
     </>
   )
 }
-
-export default Home;

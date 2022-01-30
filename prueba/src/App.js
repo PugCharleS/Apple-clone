@@ -5,7 +5,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import Cart from "./components/Cart/Cart";
 import NotFound from "./components/NotFound/NotFound";
 import { CartContextProvider } from "./context/cartContext";
-import Home from "./components/Home/Home";
+import { Home } from "./components/Home/Home";
 import { BuyBanner } from "./components/Banner/Banner";
 
 import "./App.css";

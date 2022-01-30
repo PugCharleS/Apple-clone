@@ -9,14 +9,12 @@ export const CartContextProvider = ({ children }) => {
   function addItem(item) {
     if (cartList.length === 0) {
       setCartList([...cartList, item]);
-      console.log(cartList);
       return false;
     } else {
       for (const prod of cartList) {
         if (prod.id === item.id) {
           prod.quantity+=item.quantity;
           setCartList([...cartList]);
-          console.log(cartList);
           return false;
         } 
       }

@@ -1,7 +1,6 @@
 import { getDoc, getFirestore, doc } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-// import { getFetch } from '../../helpers/mock';
 import ItemDetail from "./ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
@@ -25,6 +24,3 @@ const ItemDetailContainer = () => {
 }
 
 export default ItemDetailContainer;
-
-  // getFetch
-  // .then(resp => setProducto(resp.find( prod => prod.id === id)))
