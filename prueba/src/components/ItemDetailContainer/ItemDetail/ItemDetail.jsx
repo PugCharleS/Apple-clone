@@ -4,22 +4,22 @@ import ItemCount from "../../ItemCount/ItemCount";
 import { CartContext } from "../../../context/cartContext";
 import './ItemDetail.css';
 
-const ItemDetail = ({ producto }) => {
+const ItemDetail = ({ product }) => {
   const { addItem } = useContext(CartContext);
 
   const [show, setShow] = useState(true);
 
   const onAdd = (counter) => {
     setShow(false);
-    addItem({ ...producto, quantity: counter });
+    addItem({ ...product, quantity: counter });
   }
 
   return (
     <div>
-      <NavDetalle producto={producto}/>
-      <Detalle producto={producto} />
+      <NavDetalle product={product}/>
+      <Detalle product={product} />
       {
-        show ? <ItemCount onAdd={onAdd} producto={producto}/> 
+        show ? <ItemCount onAdd={onAdd} product={product}/> 
           :
         <div className="detail-container">
           <div className="detail">
@@ -33,9 +33,9 @@ const ItemDetail = ({ producto }) => {
   )
 }
 
-const NavDetalle = ({producto}) => {
+const NavDetalle = ({product}) => {
 
-  const {id, name, ...obj} = producto;
+  const {id, name, ...obj} = product;
 
   return (
     <nav className="nav-detalle">
@@ -54,18 +54,18 @@ const NavDetalle = ({producto}) => {
   );
 }
 
-const Detalle = ({producto}) => {
+const Detalle = ({product}) => {
   return (
     <div className="detalle">
-      <DetalleGeneral producto={producto} />
-      <DetalleInfo producto={producto} />
+      <DetalleGeneral product={product} />
+      <DetalleInfo product={product} />
     </div>
   );
 }
 
-const DetalleGeneral = ({producto}) => {
+const DetalleGeneral = ({product}) => {
 
-  const {id, name, ...obj} = producto;
+  const {id, name, ...obj} = product;
 
   return (
     <div className="general">
@@ -83,18 +83,18 @@ const DetalleGeneral = ({producto}) => {
   );
 }
 
-const DetalleInfo = ({producto}) => {
+const DetalleInfo = ({product}) => {
 
   return (
     <div className="detalle-info">
-      <h2>{`${producto.name} - ${producto.color}`}</h2>
-      <p>{producto.size}</p>
-      <p>{producto.procesador}</p>
-      <p>{producto.storage}</p>
-      <p>{producto.ram}</p>
-      <p>{producto.color}</p>
-      <p>{producto.battery}</p>
-      <a href="#procesador">Más información sobre el {producto.procesador} Apple &gt;</a>
+      <h2>{`${product.name} - ${product.color}`}</h2>
+      <p>{product.size}</p>
+      <p>{product.procesador}</p>
+      <p>{product.storage}</p>
+      <p>{product.ram}</p>
+      <p>{product.color}</p>
+      <p>{product.battery}</p>
+      <a href="#procesador">Más información sobre el {product.procesador} Apple &gt;</a>
     </div>
   );
 }

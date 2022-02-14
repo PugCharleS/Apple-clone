@@ -5,7 +5,7 @@ import ItemDetail from "./ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
 
-  const [producto, setProducto] = useState({});
+  const [product, setProducto] = useState({});
 
   const {id} = useParams();
 
@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
 
   return (
     <div>
-      <ItemDetail producto={producto} />
+      <ItemDetail product={product} />
     </div>
   )
 }

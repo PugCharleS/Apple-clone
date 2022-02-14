@@ -2,7 +2,7 @@ import useCounter from "./useCounter";
 import { formatter } from '../Formatter/Formatter';
 import './ItemCount.css';
 
-const ItemCount = ({ onAdd, producto }) => {
+const ItemCount = ({ onAdd, product }) => {
   
   const { counter, increment, decrement } = useCounter(1);
 
@@ -18,9 +18,9 @@ const ItemCount = ({ onAdd, producto }) => {
         <div className="counter-precio">
           {
             counter >= 2 ?
-              <h2>{formatter.format((producto.price*counter))} - {counter}</h2>
+              <h2>{formatter.format((product.price*counter))} - {counter}</h2>
               :
-              <h2>{formatter.format((producto.price*counter))}</h2>
+              <h2>{formatter.format((product.price*counter))}</h2>
           }
           {
             counter > 1 ? 
@@ -29,7 +29,14 @@ const ItemCount = ({ onAdd, producto }) => {
               <button id="minus" disabled className="counter-precio__button-num counter-precio__button-num-disabled" onClick={decrement}>-</button>
           }
           <button className="counter-precio__button" onClick={() => onAdd(counter)}>Agregar a la bolsa</button>
-          <button className="counter-precio__button-num" onClick={increment}>+</button>
+          {
+            counter >= product.stock ? 
+              <button className="counter-precio__button-num counter-precio__button-num-disabled">+</button>
+                :
+              <button className="counter-precio__button-num " onClick={increment}>+</button>
+          }
+
+          {/* <button className="counter-precio__button-num" onClick={increment}>+</button> */}
         </div>
       </div>
     </div>
