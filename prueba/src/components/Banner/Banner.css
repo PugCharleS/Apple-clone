@@ -102,3 +102,13 @@
   margin-top: -10px;
   letter-spacing: 5px;
 }
+
+.banner-link {
+  color: rgb(61, 124, 163);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.banner-link:hover {
+  text-decoration: underline;
+}
