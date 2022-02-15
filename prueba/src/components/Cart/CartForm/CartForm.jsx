@@ -1,39 +1,21 @@
-import React from 'react';
-import './CartForm.css'
+import React from 'react'
+import { Form } from "./Form";
 
-const CartForm = ({handleChange, makePurchase, dataForm}) => {
+const CartForm = ({handleChange, dataForm, makePurchase}) => {
+
+  const validateForm = () => {
+    return (
+      dataForm.phone && 
+      dataForm.email && 
+      dataForm.name && 
+      (/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(dataForm.email)) && 
+      (/^[ÁÉÍÓÚA-Z][a-záéíóú]+(\s+[ÁÉÍÓÚA-Z]?[a-záéíóú]+)*$/.test(dataForm.name))
+    )
+  }
 
   return (
-    <form className="bolsa-info-form" onSubmit={makePurchase}>
-      <input
-        type="text"
-        name="name"
-        placeholder="name"
-        onChange={handleChange}
-        value={dataForm.name}
-      />
-      <br />
-      <input
-        type="text"
-        name="phone"
-        placeholder="phone"
-        onChange={handleChange}
-        value={dataForm.phone}
-      />
-      <br />
-      <input
-        type="email"
-        name="email"
-        placeholder="email"
-        onChange={handleChange}
-        value={dataForm.email}
-      />
-      <br />
-      <br />
-      <button className="bolsa-info-button">Pagar</button>
-    </form>  
+    <Form handleChange={handleChange} dataForm={dataForm} validateForm={validateForm} makePurchase={makePurchase}/>
   )
 }
 
 export default CartForm;
-

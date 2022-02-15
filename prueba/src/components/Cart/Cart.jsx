@@ -12,11 +12,12 @@ import {
   query,
   writeBatch,
   where,
+  Timestamp,
 } from "firebase/firestore";
 import Order from "../Order/Order";
+import CartForm  from "./CartForm/CartForm";
 
 import "./Cart.css";
-import Form from "./CartForm/CartForm";
 
 const Cart = () => {
   const { emptyCart, cartList, total } = useContext(CartContext);
@@ -33,6 +34,7 @@ const Cart = () => {
     
     let order = {};
 
+    order.date = Timestamp.fromDate(new Date())
     order.buyer = dataForm;
     order.total = total();
 
@@ -81,7 +83,7 @@ const Cart = () => {
     setFlag(!flag);
   };
 
-  function handleChange(e) {
+    const handleChange = (e) => {
     setDataForm({
       ...dataForm,
       [e.target.name]: e.target.value,
@@ -92,7 +94,7 @@ const Cart = () => {
     <div className="contenedor-bolsa">
       <>
         {flag ? (
-          <Order idOrder={idOrder} cartList={cartList} dataForm={dataForm}/>
+          <Order idOrder={idOrder} dataForm={dataForm}/>
         ) : cartList.length >= 1 ? (
           <div className="bolsa">
             <div className="bolsa-info" id="bolsa">
@@ -101,7 +103,7 @@ const Cart = () => {
                 {formatter.format(total())}
               </h1>
               <p>Obtén envío y devoluciones gratuitos en todos los pedidos.</p>
-              <Form handleChange={handleChange} makePurchase={makePurchase} dataForm={dataForm}/>
+              <CartForm handleChange={handleChange} dataForm={dataForm} makePurchase={makePurchase}/>
             </div>
 
             <hr />
@@ -132,6 +134,7 @@ const Cart = () => {
     </div>
   );
 };
+
 
 export default Cart;
     
