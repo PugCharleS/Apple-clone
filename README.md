@@ -1,19 +1,34 @@
-# Andoramen
+# Apple Clone
 
-Andoramen is a web app to order the different japanese dishes offered in the menu
+This is a page developed in React to try to clone the official Apple page as best as possible.
+Some of their products are shown, which are brought from a database with firebase.
 
-## Ramen
+## Sections
 
-In this section you can find all the ramen dishes that are on the menu at the time you are visiting the page
+You will be able to see different sections, such as:
+-Mac
+-iPad
+-iPhone
+-Watch
+-Airpods
 
-## Drinks
+The above are the sections where you can navigate, in addition to the fact that a cart and the apple logo are included to be able to go to the main page.
 
-In this section you will be able to see all the drinks that are within the andoramen menu
+## Cart
 
-## Desserts
-
-In this section you will be able to view all the desserts found within the andoramen menu
+In this section you can view the products that you have added to your cart later.
+Here you can delete a product or all the products, just as you can make the purchase which will require you to enter your information in the form, the form has a small data validation system, so you will not be able to evade it so easily, later When filling out the form, you will be able to make your purchase and you will see the ID of your purchase on another screen.
 
 ## What happens if you click on the button "See Detail"?
 
-Well, it will show you more information about the dish that is selected so that you can know and decide if you want to order that dish.
+Well, it will show you more information about the product that is selected so that you can know and decide if you want to buy it.
+
+# How to install
+
+In this section i will explain you how to clone this project to your local device.
+
+## Instructions
+
+1. git clone https://github.com/PugCharleS/andoramen-react.git
+2. cd prueba/ && npm install
+3. npm start
