@@ -7,6 +7,7 @@ function NavBar() {
   return (
     <nav className="nav">
       <Link to={`/`} className="nav-logo"><i className="fab fa-apple"></i></Link>
+      <Link to='/category'  className="nav-link">Productos</Link>
       <Link to='/category/Mac'  className="nav-link">Mac</Link>
       <Link to='/category/iPad' className="nav-link">iPad</Link>
       <Link to='/category/iPhone' className="nav-link">iPhone</Link>

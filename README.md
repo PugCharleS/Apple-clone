@@ -32,3 +32,10 @@ In this section i will explain you how to clone this project to your local devic
 1. git clone https://github.com/PugCharleS/andoramen-react.git
 2. cd prueba/ && npm install
 3. npm start
+
+## Dependencies
+
+1. "firebase": "^9.6.4",
+2. "react": "^17.0.2",
+3. "react-dom": "^17.0.2",
+4. "react-router-dom": "^6.2.1",

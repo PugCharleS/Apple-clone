@@ -20,6 +20,24 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route
               exact
+              path="/category"
+              element={
+                <>
+                  <BuyBanner
+                    title={"Apple Products"}
+                    subtitle={"Chip M1"}
+                    img={
+                      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/imac-feature-m1-202104?wid=358&hei=352&fmt=png-alpha&.v=1617213643000"
+                    }
+                    price={"Consiguelo Desde $25,999 MXN."}
+                    phrase={"Potencia el poder."}
+                  />{" "}
+                  <ItemListContainer />
+                </>
+              }
+            />
+            <Route
+              exact
               path="/category/:id"
               element={
                 <>

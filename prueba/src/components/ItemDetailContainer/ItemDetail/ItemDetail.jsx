@@ -2,12 +2,14 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "../../ItemCount/ItemCount";
 import { CartContext } from "../../../context/cartContext";
+
 import './ItemDetail.css';
 
 const ItemDetail = ({ product }) => {
   const { addItem } = useContext(CartContext);
-
   const [show, setShow] = useState(true);
+
+  // setLoading(false);
 
   const onAdd = (counter) => {
     setShow(false);
@@ -16,19 +18,18 @@ const ItemDetail = ({ product }) => {
 
   return (
     <div>
-      <NavDetalle product={product}/>
-      <Detalle product={product} />
-      {
-        show ? <ItemCount onAdd={onAdd} product={product}/> 
-          :
-        <div className="detail-container">
-          <div className="detail">
-            <Link to={`/`}><button className="detail__button">Ver mas productos</button></Link>
-            <Link to={`/cart`}><button className="detail__button">Terminar Compra</button></Link>
+        <NavDetalle product={product}/>
+        <Detalle product={product} />
+        {
+          show ? <ItemCount onAdd={onAdd} product={product}/> 
+            :
+          <div className="detail-container">
+            <div className="detail">
+              <Link to={`/category`}><button className="detail__button">Ver mas productos</button></Link>
+              <Link to={`/cart`}><button className="detail__button">Terminar Compra</button></Link>
+            </div>
           </div>
-        </div>
-      }
-
+        }
     </div>
   )
 }
