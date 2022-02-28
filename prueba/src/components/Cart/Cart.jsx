@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../../context/cartContext";
-import CartItem from "./CartItem/CartItem";
 import { formatter } from "../Formatter/Formatter";
 import { Link } from "react-router-dom";
 import {
@@ -18,6 +17,7 @@ import Order from "../Order/Order";
 import CartForm  from "./CartForm/CartForm";
 
 import "./Cart.css";
+import CartItems from "./CartItems/CartItems";
 
 const Cart = () => {
   const { emptyCart, cartList, total } = useContext(CartContext);
@@ -93,9 +93,10 @@ const Cart = () => {
   return (
     <div className="contenedor-bolsa">
       <>
-        {flag ? (
+        {flag ? 
           <Order idOrder={idOrder} dataForm={dataForm}/>
-        ) : cartList.length >= 1 ? (
+          : 
+          cartList.length >= 1 ? 
           <div className="bolsa">
             <div className="bolsa-info" id="bolsa">
               <h1>
@@ -105,32 +106,26 @@ const Cart = () => {
               <p>Obtén envío y devoluciones gratuitos en todos los pedidos.</p>
               <CartForm handleChange={handleChange} dataForm={dataForm} makePurchase={makePurchase}/>
             </div>
-
             <hr />
-
-            <div className="bolsa-products">
-              {cartList.map((prod) => (
-                <CartItem key={prod.id} prod={prod} />
-              ))}
-            </div>
+            <CartItems cartList={cartList}/>
           </div>
-        ) : (
+          : 
           <div className="bolsa">
             <div className="bolsa-info">
               <h1>Tu bolsa est&aacute; vac&iacute;a</h1>
             </div>
           </div>
-        )}
+        }
       </>
-      {cartList.length >= 1 ? (
+      {cartList.length >= 1 ? 
         <button id="empty" className="empty-cart" onClick={emptyCart}>
           Vaciar Carrito
         </button>
-      ) : (
+        : 
         <Link to={"/"}>
           <button className="empty-cart">Ir al Home</button>
         </Link>
-      )}
+      }
     </div>
   );
 };
